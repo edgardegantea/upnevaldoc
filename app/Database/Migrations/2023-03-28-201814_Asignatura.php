@@ -3,6 +3,7 @@
 namespace App\Database\Migrations;
 
 use CodeIgniter\Database\Migration;
+use CodeIgniter\Database\RawSql;
 
 class Asignatura extends Migration
 {
@@ -11,13 +12,13 @@ class Asignatura extends Migration
         $this->forge->addField([
             'id'            => ['type' => 'int', 'constraint' => 11, 'unsigned' => true, 'auto_increment' => true],
             'nombre'        => ['type' => 'varchar', 'constraint' => 255],
-            'descripcion'   => ['type' => 'text'],
-            'creditos'      => [],
-            'horasSemana'   => [],
-            'temario'       => [],
-            'created_at'    => ['type' => 'datetime', 'null' => false],
-            'updated_at'    => ['type' => 'datetime', 'null' => true],
-            'deleted_at'    => ['type' => 'datetime', 'null' => true]
+            'descripcion'   => ['type' => 'text', 'constraint' => true],
+            'creditos'      => ['type' => 'int'],
+            'horasSemana'   => ['type' => 'int'],
+            'temario'       => ['type' => 'text'],
+            'created_at'    => ['type' => 'timestamp', 'default' => new RawSql('CURRENT_TIMESTAMP')],
+            'updated_at'    => ['type' => 'timestamp', 'null' => true],
+            'deleted_at'    => ['type' => 'timestamp', 'null' => true]
         ]);
 
         $this->forge->addKey('id', true);

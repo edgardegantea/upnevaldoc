@@ -3,6 +3,7 @@
 namespace App\Database\Migrations;
 
 use CodeIgniter\Database\Migration;
+use CodeIgniter\Database\RawSql;
 
 class DatosParaEvaluacion extends Migration
 {
@@ -14,9 +15,9 @@ class DatosParaEvaluacion extends Migration
         $this->forge->addField([
             'id'                => ['type' => 'int', 'constraint' => 11, 'unsigned' => true, 'auto_increment' => true],
             'asignatura'        => ['type' => 'int', 'constraint' => 11, 'unsigned' => true, 'auto_increment' => false],
-            'created_at'        => ['type' => 'datetime', 'null' => false],
-            'updated_at'        => ['type' => 'datetime', 'null' => true],
-            'deleted_at'        => ['type' => 'datetime', 'null' => true]
+            'created_at'        => ['type' => 'timestamp', 'default' => 'CURRENT_TIMESTAMP'],
+            'updated_at'        => ['type' => 'timestamp', 'null' => true],
+            'deleted_at'        => ['type' => 'timestamp', 'null' => true]
         ]);
 
         $this->forge->addKey('id', true);

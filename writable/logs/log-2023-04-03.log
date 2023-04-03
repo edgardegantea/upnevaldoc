@@ -1,0 +1,54 @@
+CRITICAL - 2023-04-03 04:20:40 --> Cannot declare class App\Database\Migrations\Asignatura, because the name is already in use
+in APPPATH\Database\Migrations\2023-03-28-201814_Asignatura.php on line 7.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+ERROR - 2023-04-03 04:22:33 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '1 ON `id`' at line 1 in E:\development\Proyectos\UPN212TEZIUTLAN\evaldoc\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 E:\development\Proyectos\UPN212TEZIUTLAN\evaldoc\system\Database\MySQLi\Connection.php(295): mysqli->query('DROP INDEX 1 ON...', 0)
+#1 E:\development\Proyectos\UPN212TEZIUTLAN\evaldoc\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('DROP INDEX 1 ON...')
+#2 E:\development\Proyectos\UPN212TEZIUTLAN\evaldoc\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('DROP INDEX 1 ON...')
+#3 E:\development\Proyectos\UPN212TEZIUTLAN\evaldoc\system\Database\MySQLi\Forge.php(247): CodeIgniter\Database\BaseConnection->query('DROP INDEX 1 ON...')
+#4 E:\development\Proyectos\UPN212TEZIUTLAN\evaldoc\app\Database\Migrations\2023-03-24-170509_Perfil.php(26): CodeIgniter\Database\MySQLi\Forge->dropKey('id', '1')
+#5 E:\development\Proyectos\UPN212TEZIUTLAN\evaldoc\system\Database\MigrationRunner.php(877): App\Database\Migrations\Perfil->down()
+#6 E:\development\Proyectos\UPN212TEZIUTLAN\evaldoc\system\Database\MigrationRunner.php(299): CodeIgniter\Database\MigrationRunner->migrate('down', Object(stdClass))
+#7 E:\development\Proyectos\UPN212TEZIUTLAN\evaldoc\system\Commands\Database\MigrateRollback.php(92): CodeIgniter\Database\MigrationRunner->regress(0)
+#8 E:\development\Proyectos\UPN212TEZIUTLAN\evaldoc\system\CLI\Commands.php(65): CodeIgniter\Commands\Database\MigrateRollback->run(Array)
+#9 E:\development\Proyectos\UPN212TEZIUTLAN\evaldoc\system\CLI\BaseCommand.php(114): CodeIgniter\CLI\Commands->run('migrate:rollbac...', Array)
+#10 E:\development\Proyectos\UPN212TEZIUTLAN\evaldoc\system\Commands\Database\MigrateRefresh.php(84): CodeIgniter\CLI\BaseCommand->call('migrate:rollbac...', Array)
+#11 E:\development\Proyectos\UPN212TEZIUTLAN\evaldoc\system\CLI\Commands.php(65): CodeIgniter\Commands\Database\MigrateRefresh->run(Array)
+#12 E:\development\Proyectos\UPN212TEZIUTLAN\evaldoc\system\CLI\Console.php(37): CodeIgniter\CLI\Commands->run('migrate:refresh', Array)
+#13 E:\development\Proyectos\UPN212TEZIUTLAN\evaldoc\spark(97): CodeIgniter\CLI\Console->run()
+#14 {main}
+ERROR - 2023-04-03 04:22:33 --> mysqli_sql_exception: Incorrect table definition; there can be only one auto column and it must be defined as a key in E:\development\Proyectos\UPN212TEZIUTLAN\evaldoc\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 E:\development\Proyectos\UPN212TEZIUTLAN\evaldoc\system\Database\MySQLi\Connection.php(295): mysqli->query('CREATE TABLE `e...', 0)
+#1 E:\development\Proyectos\UPN212TEZIUTLAN\evaldoc\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('CREATE TABLE `e...')
+#2 E:\development\Proyectos\UPN212TEZIUTLAN\evaldoc\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('CREATE TABLE `e...')
+#3 E:\development\Proyectos\UPN212TEZIUTLAN\evaldoc\system\Database\Forge.php(546): CodeIgniter\Database\BaseConnection->query('CREATE TABLE `e...')
+#4 E:\development\Proyectos\UPN212TEZIUTLAN\evaldoc\app\Database\Migrations\2023-03-30-215213_EvaluacionDocente.php(26): CodeIgniter\Database\Forge->createTable('evaluaciondocen...', true)
+#5 E:\development\Proyectos\UPN212TEZIUTLAN\evaldoc\system\Database\MigrationRunner.php(877): App\Database\Migrations\EvaluacionDocente->up()
+#6 E:\development\Proyectos\UPN212TEZIUTLAN\evaldoc\system\Database\MigrationRunner.php(188): CodeIgniter\Database\MigrationRunner->migrate('up', Object(stdClass))
+#7 E:\development\Proyectos\UPN212TEZIUTLAN\evaldoc\system\Commands\Database\Migrate.php(84): CodeIgniter\Database\MigrationRunner->latest(NULL)
+#8 E:\development\Proyectos\UPN212TEZIUTLAN\evaldoc\system\CLI\Commands.php(65): CodeIgniter\Commands\Database\Migrate->run(Array)
+#9 E:\development\Proyectos\UPN212TEZIUTLAN\evaldoc\system\CLI\BaseCommand.php(114): CodeIgniter\CLI\Commands->run('migrate', Array)
+#10 E:\development\Proyectos\UPN212TEZIUTLAN\evaldoc\system\Commands\Database\MigrateRefresh.php(85): CodeIgniter\CLI\BaseCommand->call('migrate', Array)
+#11 E:\development\Proyectos\UPN212TEZIUTLAN\evaldoc\system\CLI\Commands.php(65): CodeIgniter\Commands\Database\MigrateRefresh->run(Array)
+#12 E:\development\Proyectos\UPN212TEZIUTLAN\evaldoc\system\CLI\Console.php(37): CodeIgniter\CLI\Commands->run('migrate:refresh', Array)
+#13 E:\development\Proyectos\UPN212TEZIUTLAN\evaldoc\spark(97): CodeIgniter\CLI\Console->run()
+#14 {main}
+ERROR - 2023-04-03 04:23:12 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '1 ON `id`' at line 1 in E:\development\Proyectos\UPN212TEZIUTLAN\evaldoc\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 E:\development\Proyectos\UPN212TEZIUTLAN\evaldoc\system\Database\MySQLi\Connection.php(295): mysqli->query('DROP INDEX 1 ON...', 0)
+#1 E:\development\Proyectos\UPN212TEZIUTLAN\evaldoc\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('DROP INDEX 1 ON...')
+#2 E:\development\Proyectos\UPN212TEZIUTLAN\evaldoc\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('DROP INDEX 1 ON...')
+#3 E:\development\Proyectos\UPN212TEZIUTLAN\evaldoc\system\Database\MySQLi\Forge.php(247): CodeIgniter\Database\BaseConnection->query('DROP INDEX 1 ON...')
+#4 E:\development\Proyectos\UPN212TEZIUTLAN\evaldoc\app\Database\Migrations\2023-03-24-170509_Perfil.php(26): CodeIgniter\Database\MySQLi\Forge->dropKey('id', '1')
+#5 E:\development\Proyectos\UPN212TEZIUTLAN\evaldoc\system\Database\MigrationRunner.php(877): App\Database\Migrations\Perfil->down()
+#6 E:\development\Proyectos\UPN212TEZIUTLAN\evaldoc\system\Database\MigrationRunner.php(299): CodeIgniter\Database\MigrationRunner->migrate('down', Object(stdClass))
+#7 E:\development\Proyectos\UPN212TEZIUTLAN\evaldoc\system\Commands\Database\MigrateRollback.php(92): CodeIgniter\Database\MigrationRunner->regress(0)
+#8 E:\development\Proyectos\UPN212TEZIUTLAN\evaldoc\system\CLI\Commands.php(65): CodeIgniter\Commands\Database\MigrateRollback->run(Array)
+#9 E:\development\Proyectos\UPN212TEZIUTLAN\evaldoc\system\CLI\BaseCommand.php(114): CodeIgniter\CLI\Commands->run('migrate:rollbac...', Array)
+#10 E:\development\Proyectos\UPN212TEZIUTLAN\evaldoc\system\Commands\Database\MigrateRefresh.php(84): CodeIgniter\CLI\BaseCommand->call('migrate:rollbac...', Array)
+#11 E:\development\Proyectos\UPN212TEZIUTLAN\evaldoc\system\CLI\Commands.php(65): CodeIgniter\Commands\Database\MigrateRefresh->run(Array)
+#12 E:\development\Proyectos\UPN212TEZIUTLAN\evaldoc\system\CLI\Console.php(37): CodeIgniter\CLI\Commands->run('migrate:refresh', Array)
+#13 E:\development\Proyectos\UPN212TEZIUTLAN\evaldoc\spark(97): CodeIgniter\CLI\Console->run()
+#14 {main}

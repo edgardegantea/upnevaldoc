@@ -3,6 +3,7 @@
 namespace App\Database\Migrations;
 
 use CodeIgniter\Database\Migration;
+use CodeIgniter\Database\RawSql;
 
 class DatosLaborales extends Migration
 {
@@ -13,9 +14,10 @@ class DatosLaborales extends Migration
             'trabajoActual'         => ['type' => 'varchar', 'constraint' => 150, 'null' => true],
             'trabajoAnterior'       => ['type' => 'varchar', 'constraint' => 150, 'null' => true],
             'estudianteActivo'      => ['type' => 'boolean', 'default' => false],
-            'created_at'            => ['type' => 'datetime', 'null' => false],
-            'updated_at'            => ['type' => 'datetime', 'null' => true],
-            'deleted_at'            => ['type' => 'datetime', 'null' => true]
+            // 'created_at'            => ['type' => 'timestamp', 'default' => new RawSql('CURRENT_TIMESTAMP')],
+            'created_at'            => ['type' => 'timestamp', 'default' => 'CURRENT_TIMESTAMP'],
+            'updated_at'            => ['type' => 'timestamp', 'null' => true],
+            'deleted_at'            => ['type' => 'timestamp', 'null' => true]
         ]);
 
         $this->forge->addKey('id', true);

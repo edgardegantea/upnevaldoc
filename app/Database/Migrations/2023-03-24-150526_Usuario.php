@@ -3,6 +3,7 @@
 namespace App\Database\Migrations;
 
 use CodeIgniter\Database\Migration;
+use CodeIgniter\Database\RawSql;
 
 class Usuario extends Migration
 {
@@ -21,11 +22,11 @@ class Usuario extends Migration
             'amaterno'      => ['type' => 'varchar', 'constraint' => 50],
             'email'         => ['type' => 'varchar', 'constraint' => 100, 'unique' => true],
             'password'      => ['type' => 'varchar', 'constraint' => 255],
-            'foto'          => [],
-            'sexo'          => [],
-            'created_at'    => ['type' => 'datetime', 'null' => false],
-            'updated_at'    => ['type' => 'datetime', 'null' => true],
-            'deleted_at'    => ['type' => 'datetime', 'null' => true]
+            'foto'          => ['type' => 'varchar', 'constraint' => 255, 'null' => true],
+            'sexo'          => ['type' => 'enum', 'constraint' => ['Hombre', 'Mujer'], 'default' => 'Mujer'],
+            'created_at'    => ['type' => 'timestamp', 'default' => new RawSql('CURRENT_TIMESTAMP')],
+            'updated_at'    => ['type' => 'timestamp', 'null' => true],
+            'deleted_at'    => ['type' => 'timestamp', 'null' => true]
         ]);
 
         $this->forge->addKey('id', true);
@@ -36,7 +37,6 @@ class Usuario extends Migration
 
     public function down()
     {
-        $this->forge->dropKey('id', true);
         $this->forge->dropTable('usuarios', true);
     }
 }

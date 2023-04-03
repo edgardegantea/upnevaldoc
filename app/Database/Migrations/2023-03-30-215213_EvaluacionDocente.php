@@ -3,6 +3,7 @@
 namespace App\Database\Migrations;
 
 use CodeIgniter\Database\Migration;
+use CodeIgniter\Database\RawSql;
 
 class EvaluacionDocente extends Migration
 {
@@ -14,13 +15,13 @@ class EvaluacionDocente extends Migration
             'id'                => ['type' => 'int', 'constraint' => 11, 'unsigned' => true, 'auto_increment' => true],
             'evaluador'   => ['type' => 'int', 'constraint' => 11, 'unsigned' => true, 'auto_increment' => false],
             'datosParaEvaluacion'    => ['type' => 'int', 'constraint' => 11, 'unsigned' => true, 'auto_increment' => false],
-            'created_at'        => ['type' => 'datetime', 'null' => false],
-            'updated_at'        => ['type' => 'datetime', 'null' => true],
-            'deleted_at'        => ['type' => 'datetime', 'null' => true]
+            'created_at'        => ['type' => 'timestamp', 'default' => 'CURRENT_TIMESTAMP'],
+            'updated_at'        => ['type' => 'timestamp', 'null' => true],
+            'deleted_at'        => ['type' => 'timestamp', 'null' => true]
         ]);
 
-        // $this->forge->addKey('id', true);
-        $this->forge->addForeignKey('id', 'usuarios', 'id');
+        $this->forge->addKey('id', true);
+        // $this->forge->addForeignKey('id', 'usuarios', 'id');
         $this->forge->addForeignKey('evaluador', 'usuarios', 'id', 'CASCADE', 'SET_NULL');
         $this->forge->addForeignKey('datosParaEvaluacion', 'datosparaevaluacion', 'id', 'CASCADE', 'SET_NULL');
         $this->forge->createTable('evaluaciondocente', true);

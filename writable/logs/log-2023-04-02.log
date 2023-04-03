@@ -1,0 +1,24 @@
+CRITICAL - 2023-04-02 07:55:11 --> The framework needs the following extension(s) installed and loaded: intl.
+in SYSTEMPATH\CodeIgniter.php on line 226.
+ 1 SYSTEMPATH\CodeIgniter.php(226): CodeIgniter\Exceptions\FrameworkException::forMissingExtension('intl')
+ 2 SYSTEMPATH\CodeIgniter.php(190): CodeIgniter\CodeIgniter->resolvePlatformExtensions()
+ 3 ROOTPATH\spark(83): CodeIgniter\CodeIgniter->initialize()
+ERROR - 2023-04-02 05:56:17 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '(255) NULL,
+	`sexo` enum('Hombre','Mujer') NOT NULL DEFAULT 'Mujer',
+	`create...' at line 10 in E:\development\Proyectos\UPN212TEZIUTLAN\evaldoc\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 E:\development\Proyectos\UPN212TEZIUTLAN\evaldoc\system\Database\MySQLi\Connection.php(295): mysqli->query('CREATE TABLE `u...', 0)
+#1 E:\development\Proyectos\UPN212TEZIUTLAN\evaldoc\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('CREATE TABLE `u...')
+#2 E:\development\Proyectos\UPN212TEZIUTLAN\evaldoc\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('CREATE TABLE `u...')
+#3 E:\development\Proyectos\UPN212TEZIUTLAN\evaldoc\system\Database\Forge.php(546): CodeIgniter\Database\BaseConnection->query('CREATE TABLE `u...')
+#4 E:\development\Proyectos\UPN212TEZIUTLAN\evaldoc\app\Database\Migrations\2023-03-24-150526_Usuario.php(33): CodeIgniter\Database\Forge->createTable('usuarios', true)
+#5 E:\development\Proyectos\UPN212TEZIUTLAN\evaldoc\system\Database\MigrationRunner.php(877): App\Database\Migrations\Usuario->up()
+#6 E:\development\Proyectos\UPN212TEZIUTLAN\evaldoc\system\Database\MigrationRunner.php(188): CodeIgniter\Database\MigrationRunner->migrate('up', Object(stdClass))
+#7 E:\development\Proyectos\UPN212TEZIUTLAN\evaldoc\system\Commands\Database\Migrate.php(84): CodeIgniter\Database\MigrationRunner->latest(NULL)
+#8 E:\development\Proyectos\UPN212TEZIUTLAN\evaldoc\system\CLI\Commands.php(65): CodeIgniter\Commands\Database\Migrate->run(Array)
+#9 E:\development\Proyectos\UPN212TEZIUTLAN\evaldoc\system\CLI\Console.php(37): CodeIgniter\CLI\Commands->run('migrate', Array)
+#10 E:\development\Proyectos\UPN212TEZIUTLAN\evaldoc\spark(97): CodeIgniter\CLI\Console->run()
+#11 {main}
+CRITICAL - 2023-04-02 05:58:10 --> Cannot declare class App\Database\Migrations\Asignatura, because the name is already in use
+in APPPATH\Database\Migrations\2023-03-30-215223_Asignatura.php on line 7.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
